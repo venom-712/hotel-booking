@@ -1,7 +1,18 @@
-import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Home, Hotel, HotelList } from "./pages";
+import { Header, Navbar } from "./components";
 
 const App = () => {
-  return <div>Hello World</div>;
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/hotels" element={<HotelList />} />
+        <Route path="/hotels/:id" element={<Hotel />} />
+      </Routes>
+    </BrowserRouter>
+  );
 };
 
 export default App;
